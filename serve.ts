@@ -1,7 +1,8 @@
 Bun.serve({
-    port: 3000,
-    fetch() {
-        return new Response(Bun.file("./static/index.html"));
+    fetch(req) {
+        const url = new URL(req.url);
+        if (url.pathname === "/") return new Response(Bun.file("./views/hero/index.html"));
+        if (url.pathname === "/blog") return new Response("Blog!"); 
+        return new Response("404!");
     },
 });
-console.log(`Running on port: $ {serve.port}`);
