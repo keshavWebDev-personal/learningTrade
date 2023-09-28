@@ -45,9 +45,19 @@ body {
 
 #student-img {
     object-fit: contain;
-    width: 500px;
+    width: 600px;
 }
 
 .bloom-svg-container svg {
     position: absolute;
+}
+
+.bloom{
+    position: absolute;
+}
+
+.bloom1{
+    width: 100px;
+    height: 100px;
+    background: radial-gradient();
 }
