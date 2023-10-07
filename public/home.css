@@ -7,76 +7,74 @@
 :root {
     --main-pink-light: #ffe8f2;
     --main-pink: #debbd7;
+    --hover-pink-light: hsl(334, 100%, 93%);
 }
+
 .stage {
-    height: 100vh;
     background-color: var(--main-pink);
-    display: grid;
-    grid-template-columns: 1fr 6fr;
-}
-.main-section {
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
-.main-section-actions {
+
+.navbar {
+    position: relative;
     height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-minimize-container{
+    margin: 0 0 0 20px;
+}
+.icon-button{
+    cursor: pointer;
+    transition: 0.15s;
+}
+.icon-button:active{
+    scale: 0.95;
+}
+
+
+.main-section {
+    height: 100%;
+    display: flex;
 }
 
 .main-section-content {
     height: 100%;
+    width: 100%;
     border-radius: 2rem 0 0 0;
     background-color: var(--main-pink-light);
 }
-
 .sidebar-section {
-    position: relative;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.icon-button {
-	cursor: pointer;
-	transition: 0.15s ease;
-}
-.sidebar-minimize-svg:active{
-	scale: 0.95;
-}
-.sidebar-actions {
-    height: 100px;
+    min-width: 250px;
     display: grid;
+    grid-template-rows: 5fr 1fr;
     place-items: center;
-    grid-template-columns: 1fr 2fr;
-}
-
-.sidebar-content {
-    height: 100%;
-    display: grid;
-    grid-template-rows: 4fr 1fr;
 }
 
 .sidebar-content-elem {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.sidebar-content-main-item {
-    margin: 10px;
-    font-size: large;
+    width: 100%;
+    display: grid;
+    place-items: center;
     text-transform: uppercase;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 1.3rem;
+}
 
+.sidebar-content-main-item {
+    cursor: pointer;
     background-color: var(--main-pink-light);
 
-    width: 170px;
+    width: 200px;
+    margin: 20px 0;
+    display: grid;
+    place-items: center;
     height: 40px;
     border-radius: 100px;
+    transition: 0.2s;
 }
 
-.sidebar-content-elem hr {
-    width: 100px;
+.sidebar-content-main-item:hover{
+    background-color: var(--hover-pink-light);
 }
