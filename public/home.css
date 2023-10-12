@@ -48,7 +48,7 @@
 }
 
 .main-section-content {
-    height: 1080px;
+    height: 900 px;
     width: 100%;
     border-radius: 2rem 0 0 0;
     background-color: var(--main-pink-light);
@@ -96,7 +96,7 @@
 .navbar-search-container{
     width: 400px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     overflow: hidden;
     justify-self: center;
 }
