@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Ambala College of Engineering (ACE)",
+        "address": {
+            "local": "devsthali",
+            "city": "mithapur",
+            "district": "ambala",
+            "state": "haryana",
+            "country": "india"
+        } 
+    }
+]
