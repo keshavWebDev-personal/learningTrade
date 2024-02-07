@@ -83,11 +83,11 @@
                 class="w-full h-full max-h-fit bg-gradient-to-r from-[#FFF7AD] to-[#FFA9F9] flex flex-col items-center mt-4 rounded-t-3xl font-[poppins]"
             >
                 {#each filteredColleges as item}
-                    <div
-                        class=" border-2 border-white bg-gray-100 min-h-20 w-1/2 text-2xl flex items-center pl-6 rounded-3xl mt-6"
+                    <button
+                        class="  focus:bg-green-200 border-2 border-white bg-gray-100 min-h-20 w-1/2 text-2xl flex items-center pl-6 rounded-3xl mt-6  hover:scale-[1.02] transform-gpu shadow hover:shadow-lg  transition duration-200 "
                     >
                         {item.name}
-                    </div>
+                    </button>
                 {/each}
             </div>
         </div>
