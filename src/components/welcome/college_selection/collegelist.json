@@ -18,5 +18,15 @@
             "state": "haryana",
             "country": "india"
         } 
+    },
+    {
+        "name": "Maharishi Markandeshwar University (MMU)",
+        "address": {
+            "local": "mullana",
+            "city": "mullana",
+            "district": "ambala",
+            "state": "haryana",
+            "country": "india"
+        }
     }
 ]
