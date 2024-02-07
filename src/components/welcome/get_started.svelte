@@ -1,6 +1,6 @@
 <script>
-    import CollegeSelect from "./collegeSelect.svelte";
-    import colleges from "./collegelist.json"
+    import CollegeSelect from "./college_selection/collegeSelect.svelte";
+    import colleges from "./college_selection/collegelist.json"
 </script>
 
-<CollegeSelect {colleges} />
+<CollegeSelect {colleges}/>

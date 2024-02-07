@@ -4,6 +4,7 @@ export default {
     theme: {
         fonts: {
             sans: ["HelveticaWorld", "sans-serif"],
+            poppins: ["Poppins", "sans-serif"],
         },
     },
 

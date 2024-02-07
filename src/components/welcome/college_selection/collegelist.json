@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Ambala College of Engineering (ACE)",
+        "address": {
+            "local": "devsthali",
+            "city": "mithapur",
+            "district": "ambala",
+            "state": "haryana",
+            "country": "india"
+        } 
+    },
+    {
+        "name": "Guru Nanak Institutions (GNI)",
+        "address": {
+            "local": "mullana",
+            "city": "mullana",
+            "district": "ambala",
+            "state": "haryana",
+            "country": "india"
+        } 
+    }
+]
