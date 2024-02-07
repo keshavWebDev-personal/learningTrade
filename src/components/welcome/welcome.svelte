@@ -1,6 +1,6 @@
 <script>
-    import SearchableDropdown from "./SearchableDropdown.svelte";
+    import CollegeSelect from "./collegeSelect.svelte";
     import colleges from "./collegelist.json"
 </script>
 
-<SearchableDropdown {colleges} />
+<CollegeSelect {colleges} />
