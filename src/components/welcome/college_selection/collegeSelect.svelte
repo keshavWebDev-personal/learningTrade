@@ -1,6 +1,4 @@
 <script lang="ts">
-    import { string } from "astro/zod";
-
     export let colleges: College[] = [];
 
     interface College {
@@ -42,9 +40,9 @@
 </script>
 
 <div
-    class="h-screen max-h-max w-full flex flex-col items-center p-0 m-0 box-border"
+    class="  min-h-screen max-h-max w-full flex justify-center p-0 m-0 box-border"
 >
-    <div class="flex flex-col w-4/6 h-full">
+    <div class=" flex flex-col w-11/12 2xl:w-4/6  max-h-full">
         <div class=" w-full flex items-center mt-12 gap-4">
             <img
                 src="svg/back_button.svg"
@@ -60,16 +58,16 @@
                 <span class=" w-1/6 bg-green-600"></span>
             </div>
         </div>
-        <label for="" class="font-[HelveticaWorld] text-6xl mt-10"
+        <label for="" class="font-[HelveticaWorld] text-3xl lg:text-5xl md:text-4xl sm:text-3xl mt-10 "
             >Tell us about your College</label
         >
         <div class=" w-full h-full flex flex-col items-center mt-10">
             <!-- search-container -->
             <div
-                class=" justify-between w-96 h-14 rounded-full b bg-gradient-to-r from-[#FFF7AD] to-[#FFA9F9] flex items-center p-3"
+                class="lg:w-96 lg:h-14 lg:p-3 md:text-lg text-sm sm:w-80 sm:h-12 sm:p-2 w-2/3 h-10 p-1 rounded-full b bg-gradient-to-r from-[#FFF7AD] to-[#FFA9F9] flex items-center justify-between "
             >
                 <div
-                    class=" rounded-full bg-[#004AAD] w-10 p-2 text-white fill-white"
+                    class=" rounded-full bg-[#004AAD] lg:w-10 lg:p-2 sm:w-8 sm:p-2 w-6 p-1 text-white fill-white"
                 >
                     <img src="svg/search-icon.svg" alt="" srcset="" />
                 </div>
@@ -85,22 +83,20 @@
                         src="svg/cross.svg"
                         alt=""
                         srcset=""
-                        class=" w-5 mr-2"
-                        width="1.25rem"
-                        height="1.25rem"
+                        class=" sm:w-5 w-3  mr-2"
                     />
                 </button>
             </div>
             <div
-                class="w-full h-full max-h-fit bg-gradient-to-r from-[#FFF7AD] to-[#FFA9F9] flex flex-col items-center mt-4 rounded-t-3xl font-[poppins]"
+                class=" pb-5 w-full h-full max-h-fit bg-gradient-to-r from-[#FFF7AD] to-[#FFA9F9] flex flex-col items-center mt-4 rounded-t-3xl font-[poppins]"
             >
                 {#each filteredColleges as item}
                     <button
-                        class="  focus:bg-green-200 border-2 border-white bg-gray-100 min-h-20 w-1/2 text-2xl text-left pl-6 rounded-3xl mt-6 hover:scale-[1.02] transform-gpu shadow hover:shadow-lg transition duration-200"
+                        class=" active:scale-[0.99] active:bg-gray-200 focus:bg-green-200 focus:shadow-lg focus:scale-[1.02] border-2 border-white bg-gray-100 sm:min-h-20 min-h-16 md:w-1/2 sm:w-3/4 w-11/12  xl:text-2xl lg:text-xl md:text-base sm:text-sm text-xs text-left sm:px-6 sm:py-3 px-3 py-1 rounded-3xl mt-6 hover:scale-[1.02] transform-gpu shadow hover:shadow-lg hover:bg-gray-50 transition duration-200"
                     >
                         {item.name}
                         <br />
-                        <p class=" text-base">
+                        <p class=" xl:text-base lg:text-sm md:text-xs sm:text-[0.7rem] text-[0.5rem] ">
                             {cptlFstL(item.address.local)},
                             {cptlFstL(item.address.city)},
                             {cptlFstL(item.address.district)},
