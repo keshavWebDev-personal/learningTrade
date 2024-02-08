@@ -1,0 +1,12 @@
+---
+    import CollegeSelect from "./college_selection/collegeSelect.svelte";
+    import CollegeSelect2 from "./college_selection/collegeSelect.astro";
+    import colleges from "../../data/collegelist.json"
+---
+
+<div class="overflow-hidden">
+    
+    <div class="flex w-[200%] ">
+        <CollegeSelect colleges={colleges}/>
+    </div>
+</div>
