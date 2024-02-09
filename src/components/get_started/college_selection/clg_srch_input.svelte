@@ -1,0 +1,1 @@
+<input type="text" class="bg-[#00000000] w-3/4 h-full outline-none" placeholder="Search..">
