@@ -29,7 +29,7 @@
 >
     {#each buttons as item}
     <button
-        class=" active:scale-[0.99] active:bg-gray-200 focus:bg-green-200 focus:shadow-lg focus:scale-[1.02] border-2 border-white bg-gray-100 sm:min-h-20 min-h-16 md:w-1/2 sm:w-3/4 w-11/12  xl:text-2xl lg:text-xl md:text-base sm:text-sm text-xs text-left sm:px-6 sm:py-3 px-3 py-1 rounded-3xl mt-6 hover:scale-[1.02] transform-gpu shadow hover:shadow-lg hover:bg-gray-50 transition duration-200"
+        class=" active:scale-[0.99] active:bg-gray-200 focus:bg-green-200 focus:shadow-lg focus:scale-[1.02] border-2 border-white bg-gray-100 sm:min-h-20 min-h-16 md:w-1/2 sm:w-3/4 w-11/12  xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs text-left sm:px-6 sm:py-3 px-3 py-1 rounded-3xl mt-6 hover:scale-[1.02] transform-gpu shadow hover:shadow-lg hover:bg-gray-50 transition duration-200"
     >
         {item.name}
         <br />
