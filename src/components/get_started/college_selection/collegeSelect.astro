@@ -42,27 +42,8 @@
             >Tell us about your College</label
         >
         <div class=" w-full h-full flex flex-col items-center mt-10">
-            <!-- search-container -->
-            <div
-                class="lg:w-96 lg:h-14 lg:p-3 md:text-lg text-sm sm:w-80 sm:h-12 sm:p-2 w-2/3 h-10 p-1 rounded-full b bg-gradient-to-r from-[#FFF7AD] to-[#FFA9F9] flex items-center justify-between "
-            >
-                <div
-                    class=" rounded-full bg-[#004AAD] lg:w-10 lg:p-2 sm:w-8 sm:p-2 w-6 p-1 text-white fill-white"
-                >
-                    <img src="svg/search-icon.svg" alt="" srcset="" />
-                </div>
-
-                <ClgSrchInput client:load />
+            <ClgSrchInput client:load />
                 
-                <button>
-                    <img
-                        src="svg/cross.svg"
-                        alt=""
-                        srcset=""
-                        class=" sm:w-5 w-3  mr-2"
-                    />
-                </button>
-            </div>
             <ClgBtnSpawner client:load />
         </div>
     </div>
