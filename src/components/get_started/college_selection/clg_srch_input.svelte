@@ -1,16 +1,7 @@
 <script lang="ts">
     import { collegelist, Mcolleges as collegelistOg } from "./store.ts";
+    import type { College } from '../../get_started.interface.ts'
 
-    type College = {
-        name: string;
-        address: {
-            local: string;
-            city: string;
-            district: string;
-            state: string;
-            country: string;
-        };
-    };
     let srch_value: string = "";
     let filtered: College[] = [];
 
