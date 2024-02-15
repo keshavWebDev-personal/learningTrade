@@ -5,6 +5,8 @@ export default {
         fonts: {
             sans: ["HelveticaWorld", "sans-serif"],
             poppins: ["Poppins", "sans-serif"],
+            SourceCodePro: ["SourceCodePro", "sans-serif"],
+            BebasNeue: ["BebasNeue", "sans-serif"],
         },
     },
 
