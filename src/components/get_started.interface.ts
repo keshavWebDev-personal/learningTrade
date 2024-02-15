@@ -1,5 +1,6 @@
 type College = { 
     name: string;
+    alias: string
     address: {
         local: string;
         city: string;
@@ -9,3 +10,5 @@ type College = {
     };
     id: string
 }
+
+export type {College}
