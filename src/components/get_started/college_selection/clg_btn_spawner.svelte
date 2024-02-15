@@ -25,7 +25,7 @@
 </script>
 
 <div
-    class=" pb-5 w-full h-full max-h-fit bg-gradient-to-r from-[#FFF7AD] to-[#FFA9F9] flex flex-col items-center mt-4 rounded-t-3xl font-[poppins]"
+    class=" pb-5 w-full h-full max-h-fit bg-gradient-to-r from-[#FFF7AD] to-[#FFA9F9] flex flex-col items-center mt-4 rounded-t-3xl font-[poppins] dark:bg-gradient-to-r from-[#635c24] to-[#6d2268] "
 >
     {#each buttons as item}
     <button
