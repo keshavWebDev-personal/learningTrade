@@ -31,7 +31,7 @@
 </script>
 
 <div
-    class="lg:w-96 lg:h-14 lg:p-3 md:text-lg text-sm sm:w-80 sm:h-12 sm:p-2 w-2/3 h-10 p-1 rounded-full b bg-gradient-to-r from-[#FFF7AD] to-[#FFA9F9] flex items-center justify-between dark:border dark:border-[#3d3d3d] dark:from-[#28282646] dark:via-[#372d37c2] dark:to-[#525252c2]"
+    class="lg:w-96 lg:h-14 lg:p-3 md:text-lg text-sm sm:w-80 sm:h-12 sm:p-2 w-2/3 h-10 p-1 rounded-full b bg-gradient-to-r from-[#FFF7AD] to-[#FFA9F9] flex items-center justify-between dark:border dark:border-[#3d3d3d] dark:from-[#372d37c2]  dark:to-[#525252c2]"
 >
     <div
         class=" rounded-full bg-[#004AAD] lg:w-10 lg:p-2 sm:w-8 sm:p-2 w-6 p-1 text-white fill-white"
