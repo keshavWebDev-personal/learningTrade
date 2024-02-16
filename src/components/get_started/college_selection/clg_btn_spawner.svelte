@@ -17,7 +17,7 @@
 </script>
 
 <div
-    class=" pb-5 w-full h-full max-h-fit bg-gradient-to-r from-[#FFF7AD] to-[#FFA9F9] flex flex-col items-center mt-4 rounded-t-3xl font-[poppins] dark:bg-gradient-to-r "
+    class=" pb-5 w-full h-full max-h-fit bg-gradient-to-tr from-[#FFF7AD] to-[#FFA9F9] flex flex-col items-center mt-4 rounded-t-3xl font-[poppins] dark:bg-gradient-to-r dark:from-[#28282646] dark:via-[#372d37c2] dark:to-[#525252c2] dark:border-t dark:border-l dark:border-[#3d3d3d] "
 >
     {#each buttons as item}
     <button
