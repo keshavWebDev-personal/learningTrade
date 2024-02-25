@@ -16,9 +16,7 @@
     })
 </script>
 
-<div
-    class=" pb-5 w-full h-full max-h-fit bg-gradient-to-tr from-[#FFF7AD] to-[#FFA9F9] flex flex-col items-center mt-4 rounded-t-3xl font-[poppins] dark:bg-gradient-to-r dark:from-[#28282646] dark:via-[#372d37c2] dark:to-[#525252c2] dark:border-t dark:border-l dark:border-[#3d3d3d] "
->
+<div class="w-full grid place-items-center ">
     {#each buttons as item}
     <button
         class=" active:scale-[0.99] active:bg-gray-200 focus:bg-green-200 focus:shadow-lg focus:scale-[1.02] border-2 border-white bg-gray-100 sm:min-h-20 min-h-16 md:w-1/2 sm:w-3/4 w-11/12  xl:text-xl lg:text-lg md:text-base sm:text-sm text-xs text-left sm:px-6 sm:py-3 px-3 py-1 rounded-3xl mt-6 hover:scale-[1.02] transform-gpu shadow hover:shadow-lg hover:bg-gray-50 transition duration-200 flex items-center justify-between dark:bg-neutral-700 dark:border dark:border-[#747474] dark:hover:bg-neutral-600 dark:focus:bg-[#415543]  "
@@ -40,4 +38,5 @@
 
     </button>
     {/each}
+
 </div>
