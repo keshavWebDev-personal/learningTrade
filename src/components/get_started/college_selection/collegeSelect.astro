@@ -1,4 +1,5 @@
 ---
+    import InputForm from '../inputForm.layout.astro'
     import ClgSrchInput from './clg_srch_input.svelte'
     import ClgBtnSpawner from './clg_btn_spawner.svelte'
 
@@ -18,29 +19,28 @@
 ---
 
 
-
-<div
-    class="min-h-screen max-h-max w-svw flex justify-center p-0 m-0 box-border"
->
-    <!-- Status Bar -->
+<InputForm>
     <div class=" flex flex-col w-11/12 2xl:w-4/6  max-h-full">
-        <div class=" w-full flex items-center mt-12 gap-4 ">
-            
-            <svg class=" w-5 dark:fill-white fill-black " width="1.25rem"
-            height="1.25rem" xmlns="http://www.w3.org/2000/svg" data-v-91817bbc="" width="16" height="16" viewBox="0 0 16 16" ><path data-v-91817bbc="" clip-rule="evenodd" d="M3 7.95711L10.9571 15.9142L12.3713 14.5L5.82843 7.95711L12.3713 1.41421L10.9571 0L3 7.95711Z" /></svg>
-            <!-- progrress-bar -->
-            <div class=" bg-gray-200 dark:bg-neutral-700  w-full h-1 flex rounded-lg">
-                <!-- progrress-bar-completed -->
-                <span class=" w-1/6 bg-green-600 dark:bg-green-500  "></span>
-            </div>
-        </div>
+        
         <label for="" class="font-[HelveticaWorld] text-3xl lg:text-5xl md:text-4xl sm:text-3xl mt-10 "
             >Tell us about your College</label
         >
         <div class=" w-full h-full flex flex-col items-center mt-10">
             <ClgSrchInput client:load />
-                
-            <ClgBtnSpawner client:load />
+            
+            <div class="pb-5 w-full h-full max-h-fit bg-gradient-to-tr from-[#FFF7AD] to-[#FFA9F9] dark:bg-gradient-to-r dark:from-[#28282646] dark:via-[#372d37c2] dark:to-[#525252c2] mt-4 rounded-t-3xl font-[poppins]  dark:border-t dark:border-l dark:border-[#3d3d3d] relative">
+                <button class="bg-gradient-to-tr from-[#FFF7AD] to-[#FFA9F9] dark:bg-gradient-to-r dark:from-[#1F1E1F] dark:to-[#232022] text-lg absolute px-10 py-2 rounded-t-3xl bottom-[99.99%] z-10 left-24 dark:border-x dark:border-t dark:border-[#3d3d3d] after:content-[''] after:w-full after:rounded-es-full after:h-[50%] after:bg-none after:absolute after:left-[100%] after:bottom-0 clear-button after:dark:border-l after:dark:border-b after:dark:border-[#3d3d3d]     before:content-[''] before:w-[20px] before:rounded-ee-full before:h-[50%] before:bg-none before:absolute before:right-[100%] before:bottom-0 clear-button before:dark:border-r before:dark:border-b before:dark:border-[#3d3d3d]  " >Clear</button>
+
+                <ClgBtnSpawner client:load />
+            </div>
         </div>
     </div>
-</div>
+</InputForm>
+
+<style>
+    .clear-button::after{
+        /* border: solid #fff 1px; */
+        box-shadow: -20px 0 0 0 #242124;
+
+    }
+</style>
