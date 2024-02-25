@@ -7,7 +7,7 @@ import colleges from "../data/collegelist.json"
 ---
 
 <Main title="Get Started">
-    <div class="dark:text-white dark:bg-[#181818] flex flex-col" > 
+    <div class="dark:text-white dark:bg-[#181818] flex flex-col h-screen" > 
         <!-- Header -->
         <div class="w-full flex justify-center items-center  mt-12">
             
@@ -22,8 +22,8 @@ import colleges from "../data/collegelist.json"
             </div>
         </div>
         <!-- Mover Element -->
-        <div class="overflow-hidden">
-            <div class="flex w-[200%]">
+        <div class="overflow-hidden h-full">
+            <div class="flex w-[200%] h-full">
                 <CollegeSelect colleges={colleges}/>
             </div>
         </div>
