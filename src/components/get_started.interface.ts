@@ -1,6 +1,6 @@
-type College = { 
+type College = {
     name: string;
-    alias: string
+    alias: string;
     address: {
         local: string;
         city: string;
@@ -8,7 +8,7 @@ type College = {
         state: string;
         country: string;
     };
-    id: string
-}
+    id: string;
+};
 
-export type {College}
+export type { College };
