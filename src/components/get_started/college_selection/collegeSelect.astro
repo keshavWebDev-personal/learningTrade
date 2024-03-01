@@ -16,6 +16,7 @@ interface College {
 function cptlFstL(string: string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
 ---
 
 <InputForm>
@@ -25,13 +26,11 @@ function cptlFstL(string: string) {
             class="font-[HelveticaWorld] text-3xl lg:text-5xl md:text-4xl sm:text-3xl mt-10"
             >Tell us about your College</label
         >
-        <div
-            class="w-full h-full flex flex-col items-center mt-10"
-        >
+        <div class="w-full h-full flex flex-col items-center mt-10">
             <ClgSrchInput client:load />
 
             <div
-                class="pb-5 w-full h-full max-h-fit bg-gradient-to-tr from-[#FFF7AD] to-[#FFA9F9] dark:bg-gradient-to-r dark:from-[#28282646] dark:via-[#372d37c2] dark:to-[#525252c2] md:mt-4 sm:mt-14 mt-12  font-[poppins] dark:border-t dark:border-l dark:border-[#3d3d3d] relative rounded-t-3xl"
+                class="pb-5 w-full h-full max-h-fit bg-gradient-to-tr from-[#FFF7AD] to-[#FFA9F9] dark:bg-gradient-to-r dark:from-[#28282646] dark:via-[#372d37c2] dark:to-[#525252c2] md:mt-4 sm:mt-14 mt-12 font-[poppins] dark:border-t dark:border-l dark:border-[#3d3d3d] relative rounded-t-3xl"
                 id="background"
             >
                 <div
@@ -66,8 +65,11 @@ function cptlFstL(string: string) {
                         </div>
                     </div>
                 </div>
+                <div id="btnSpwn_div">
+                    <ClgBtnSpawner client:load />
+                </div>
+                <button class="hidden opacity-0 transition-opacity absolute bottom-[105%] bg-sky-800 py-2 px-5 right-10 rounded-md text-lg animate-pulse hover:animate-none  " id="next_button">Next</button>
 
-                <ClgBtnSpawner client:load />
             </div>
         </div>
     </div>
@@ -85,4 +87,23 @@ function cptlFstL(string: string) {
             ButtonBG.style.width = background?.offsetWidth + "px";
         }
     });
+    let btnSpwner:HTMLDivElement | null= document.querySelector("#btnSpwn_div")
+    let nextButton:HTMLDivElement | null= document.querySelector('#next_button')
+
+    btnSpwner?.addEventListener('click',()=>{
+        if (!nextButton )return
+        nextButton.style.display = 'block';
+        nextButton.style.opacity = '1';
+    })
+    nextButton?.addEventListener('mousedown',(event)=>{
+        event.preventDefault()
+        setTimeout(()=>{
+            if (!nextButton) return
+            nextButton.style.opacity = '0';
+            setTimeout(()=>{
+                if (!nextButton) return
+                nextButton.style.display = 'none';
+            },150)
+        }, 300)
+    })
 </script>
