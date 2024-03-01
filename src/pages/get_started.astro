@@ -1,31 +1,68 @@
 ---
 import Main from "../layouts/main.astro";
 // import CollegeSelect from '../components/get_started/college_selection/collegeSelect.svelte'
-import CollegeSelect from '../components/get_started/college_selection/collegeSelect.astro'
-import colleges from "../data/collegelist.json"
-
+import CollegeSelect from "../components/get_started/college_selection/collegeSelect.astro";
+import colleges from "../data/collegelist.json";
 ---
 
 <Main title="Get Started">
-    <div class="dark:text-white dark:bg-[#181818] flex flex-col h-screen" > 
+    <script>
+        let showGoNextButton: boolean = false;
+        function updateShowGoNextButton(value: boolean) {
+            showGoNextButton = value;
+        }
+    </script>
+    
+    <div class="dark:text-white dark:bg-[#181818] flex flex-col h-screen">
         <!-- Header -->
-        <div class="w-full flex justify-center items-center  mt-12">
-            
-            <div class="w-11/12 2xl:w-4/6 flex items-center gap-4 ">
-                <svg class=" w-5 dark:fill-white fill-black " width="1.25rem"
-                height="1.25rem" xmlns="http://www.w3.org/2000/svg" data-v-91817bbc="" width="16" height="16" viewBox="0 0 16 16" ><path data-v-91817bbc="" clip-rule="evenodd" d="M3 7.95711L10.9571 15.9142L12.3713 14.5L5.82843 7.95711L12.3713 1.41421L10.9571 0L3 7.95711Z" /></svg>
+        <div class="w-full flex justify-center items-center mt-12">
+            <div class="w-11/12 2xl:w-4/6 flex items-center gap-4">
+                <svg
+                    class="w-5 dark:fill-white fill-black"
+                    width="1.25rem"
+                    height="1.25rem"
+                    xmlns="http://www.w3.org/2000/svg"
+                    data-v-91817bbc=""
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    ><path
+                        data-v-91817bbc=""
+                        clip-rule="evenodd"
+                        d="M3 7.95711L10.9571 15.9142L12.3713 14.5L5.82843 7.95711L12.3713 1.41421L10.9571 0L3 7.95711Z"
+                    ></path></svg
+                >
                 <!-- progrress-bar -->
-                <div class=" bg-gray-200 dark:bg-neutral-700  w-full h-1 flex rounded-lg">
+                <div
+                    class="bg-gray-200 dark:bg-neutral-700 w-full h-1 flex rounded-lg"
+                >
                     <!-- progrress-bar-completed -->
-                    <span class=" w-1/6 bg-green-600 dark:bg-green-500  "></span>
+                    <span class="w-1/6 bg-green-600 dark:bg-green-500"></span>
                 </div>
+
+                <svg
+                    class="w-5 dark:fill-white fill-black rotate-180"
+                    width="1.25rem"
+                    height="1.25rem"
+                    xmlns="http://www.w3.org/2000/svg"
+                    data-v-91817bbc=""
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    ><path
+                        data-v-91817bbc=""
+                        clip-rule="evenodd"
+                        d="M3 7.95711L10.9571 15.9142L12.3713 14.5L5.82843 7.95711L12.3713 1.41421L10.9571 0L3 7.95711Z"
+                    ></path></svg
+                >
             </div>
         </div>
         <!-- Mover Element -->
         <div class="overflow-hidden h-full">
             <div class="flex w-[200%] h-full">
-                <CollegeSelect colleges={colleges}/>
+                <CollegeSelect colleges={colleges} />
             </div>
         </div>
     </div>
+    
 </Main>
