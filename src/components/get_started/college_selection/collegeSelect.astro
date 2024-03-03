@@ -16,7 +16,6 @@ interface College {
 function cptlFstL(string: string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
-
 ---
 
 <InputForm>
@@ -68,8 +67,10 @@ function cptlFstL(string: string) {
                 <div id="btnSpwn_div">
                     <ClgBtnSpawner client:load />
                 </div>
-                <button class="hidden opacity-0 transition-opacity absolute bottom-[105%] bg-sky-800 py-2 px-5 right-10 rounded-md text-lg animate-pulse hover:animate-none  " id="next_button">Next</button>
-
+                <button
+                    class="opacity-0 transition-opacity dark:border dark:border-[#295157]  absolute bottom-[105%] bg-gradient-to-tr from-[#355c6342] from-18% to-[#27b0eba8] py-2 px-5 right-10 rounded-md text-lg"
+                    id="next_button">Next</button
+                >
             </div>
         </div>
     </div>
@@ -87,23 +88,18 @@ function cptlFstL(string: string) {
             ButtonBG.style.width = background?.offsetWidth + "px";
         }
     });
-    let btnSpwner:HTMLDivElement | null= document.querySelector("#btnSpwn_div")
-    let nextButton:HTMLDivElement | null= document.querySelector('#next_button')
+    let btnSpwner: HTMLDivElement | null =
+        document.querySelector("#btnSpwn_div");
+    let nextButton: HTMLDivElement | null =
+        document.querySelector("#next_button");
 
-    btnSpwner?.addEventListener('click',()=>{
-        if (!nextButton )return
-        nextButton.style.display = 'block';
-        nextButton.style.opacity = '1';
-    })
-    nextButton?.addEventListener('mousedown',(event)=>{
-        event.preventDefault()
-        setTimeout(()=>{
-            if (!nextButton) return
-            nextButton.style.opacity = '0';
-            setTimeout(()=>{
-                if (!nextButton) return
-                nextButton.style.display = 'none';
-            },150)
-        }, 300)
-    })
+    btnSpwner?.addEventListener("click", () => {
+        if (!nextButton) return;
+        nextButton.style.opacity = "1";
+    });
+    nextButton?.addEventListener("mousedown", (event) => {
+        event.preventDefault();
+        if (!nextButton) return;
+        nextButton.style.opacity = "0";
+    });
 </script>
