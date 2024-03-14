@@ -6,14 +6,9 @@ import colleges from "../data/collegelist.json";
 ---
 
 <Main title="Get Started">
-    <script>
-        let showGoNextButton: boolean = false;
-        function updateShowGoNextButton(value: boolean) {
-            showGoNextButton = value;
-        }
-    </script>
-
-    <div class="dark:text-white dark:bg-[#181818] flex flex-col min-h-screen h-screen max-h-max">
+    <div
+        class="dark:text-white dark:bg-[#181818] flex flex-col min-h-screen h-screen max-h-max"
+    >
         <!-- Header -->
         <div class="w-full flex justify-center items-center pt-12">
             <div class="w-11/12 2xl:w-4/6 flex items-center gap-4">
@@ -35,9 +30,13 @@ import colleges from "../data/collegelist.json";
                 <!-- progrress-bar -->
                 <div
                     class="bg-gray-200 dark:bg-neutral-700 w-full h-1 flex rounded-lg"
+                    id="progress-container"
                 >
                     <!-- progrress-bar-completed -->
-                    <span class="transition-all bg-green-600 dark:bg-green-500"></span>
+                    <span
+                        class="transition-all bg-green-600 dark:bg-green-500"
+                        id="progress-completed"
+                        style="width:0px"></span>
                 </div>
 
                 <svg
@@ -57,11 +56,40 @@ import colleges from "../data/collegelist.json";
                 >
             </div>
         </div>
+        <button
+            class="opacity-0 transition-opacity dark:border dark:border-[#295157] absolute bottom-[105%] bg-gradient-to-tr from-[#355c6342] from-18% to-[#27b0eba8] py-2 px-5 right-10 rounded-md text-lg"
+            id="next_button">Next</button
+        >
         <!-- Mover Element -->
         <div class="h-full max-h-max overflow-x-hidden">
-            <div class="flex w-[200%] h-full">
+            <div class="flex h-full" id="mover-element">
                 <CollegeSelect colleges={colleges} />
             </div>
         </div>
     </div>
 </Main>
+
+<script>
+    let progBar: HTMLSpanElement | null = document.querySelector(
+        "#progress-completed"
+    );
+    let progCon: HTMLDivElement | null = document.querySelector(
+        "#progress-container"
+    );
+    let moverElem: HTMLDivElement | null =
+        document.querySelector("#mover-element");
+
+    if (moverElem && progCon && progBar) {
+        moverElem.style.width = moverElem.children.length * 100 + "%";
+        moverElem.addEventListener("click", (e) => {
+            console.log(e);
+        });
+    }
+    let nextButton: HTMLDivElement | null =
+        document.querySelector("#next_button");
+    nextButton?.addEventListener("mousedown", (event) => {
+        event.preventDefault();
+        if (!nextButton) return;
+        nextButton.style.opacity = "0";
+    });
+</script>
