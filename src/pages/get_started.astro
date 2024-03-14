@@ -13,9 +13,9 @@ import colleges from "../data/collegelist.json";
         }
     </script>
 
-    <div class="dark:text-white dark:bg-[#181818] flex flex-col h-screen max-h-max">
+    <div class="dark:text-white dark:bg-[#181818] flex flex-col min-h-screen h-screen max-h-max">
         <!-- Header -->
-        <div class="w-full flex justify-center items-center mt-12">
+        <div class="w-full flex justify-center items-center pt-12">
             <div class="w-11/12 2xl:w-4/6 flex items-center gap-4">
                 <svg
                     class="w-5 dark:fill-white fill-black"
@@ -58,7 +58,7 @@ import colleges from "../data/collegelist.json";
             </div>
         </div>
         <!-- Mover Element -->
-        <div class=" h-full max-h-max">
+        <div class="h-full max-h-max overflow-x-hidden">
             <div class="flex w-[200%] h-full">
                 <CollegeSelect colleges={colleges} />
             </div>
