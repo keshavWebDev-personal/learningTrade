@@ -57,15 +57,15 @@ import colleges from "../data/collegelist.json";
                 >
             </div>
         </div>
-        <button
-            class="opacity-0 transition-opacity dark:border dark:border-[#295157] absolute bg-gradient-to-tr from-[#355c6342] from-18% to-[#27b0eba8] py-2 px-5 rounded-md text-lg top-100"
-            id="next_button"
-            >Next
-        </button>
-        <div class="h-full max-h-max overflow-x-hidden">
+        <div class="h-full max-h-max overflow-x-hidden relative">
+            <button
+                class="opacity-0 transition-opacity dark:border dark:border-[#295157] absolute bg-gradient-to-tr from-[#355c6342] from-18% to-[#27b0eba8] py-2 px-5 rounded-md text-lg z-50 top-32 right-64 "
+                id="next_button"
+                >Next
+            </button>
             <!-- Mover Element -->
             <div
-                class="flex h-full relative transition-all ease-[cubic-bezier(.10,0,.01,1)] duration-1000 left-0"
+                class="flex h-full relative transition-all ease-[cubic-bezier(.03,0,.01,1)] duration-1000 left-0"
                 id="mover-element"
             >
                 <CollegeSelect colleges={colleges} />
@@ -90,13 +90,13 @@ import colleges from "../data/collegelist.json";
     // Code to do something on button click
     if (moverElem && progCon && progBar) {
         moverElem.style.width = moverElem.children.length * 100 + "%";
-        moverElem.addEventListener("click", (e) => {
+        moverElem.addEventListener("click", (e:Event) => {
             if (e.target && e.target.ariaLabel == "trig_button") {
                 nextButton.style.opacity = "1";
             }
         });
     }
-    nextButton?.addEventListener("click", (event) => {
+    nextButton?.addEventListener("mousedown", (event) => {
         event.preventDefault();
         if (!nextButton || !moverElem) return;
         nextButton.style.opacity = "0";
