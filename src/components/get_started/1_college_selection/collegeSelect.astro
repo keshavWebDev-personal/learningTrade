@@ -84,18 +84,8 @@ function cptlFstL(string: string) {
             ButtonBG.style.width = background?.offsetWidth + "px";
         }
     });
-    let btnSpwner: HTMLDivElement | null =
-        document.querySelector("#btnSpwn_div");
+    
     let nextButton: HTMLDivElement | null =
-        document.querySelector("#next_button");
-
-    btnSpwner?.addEventListener("click", () => {
-        if (!nextButton) return;
-        nextButton.style.opacity = "1";
-    });
-    nextButton?.addEventListener("mousedown", (event) => {
-        event.preventDefault();
-        if (!nextButton) return;
-        nextButton.style.opacity = "0";
-    });
+    document.querySelector("#next_button");
+    
 </script>

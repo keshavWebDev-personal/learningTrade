@@ -22,12 +22,12 @@
             id={item.id}
             aria-label="trig_button"
         >
-            <span class="" aria-label="trig_button">
-                <p aria-label="trig_button">{item.name}</p>
+            <span class="">
+                <p>{item.name}</p>
 
                 <p
                     class="font-[SourceCodePro] xl:text-base lg:text-sm md:text-xs sm:text-[0.7rem] text-[0.5rem] dark:text-neutral-300"
-                    aria-label="trig_button"
+                
                 >
                     {cptlFstL(item.address.local)},
                     {cptlFstL(item.address.city)},
@@ -39,7 +39,7 @@
 
             <p
                 class="font-[BebasNeue] xl:text-2xl text-lg"
-                aria-label="trig_button"
+            
             >
                 {item.alias}
             </p>
