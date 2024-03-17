@@ -90,8 +90,9 @@ import colleges from "../data/collegelist.json";
     // Code to do something on button click
     if (moverElem && progCon && progBar) {
         moverElem.style.width = moverElem.children.length * 100 + "%";
-        moverElem.addEventListener("click", (e:Event) => {
-            if (e.target && e.target.ariaLabel == "trig_button") {
+        moverElem.addEventListener("click", (e: Event) => {
+            let target = e.target as HTMLElement
+            if (target && nextButton && target.ariaLabel == "trig_button") {
                 nextButton.style.opacity = "1";
             }
         });
