@@ -131,11 +131,8 @@ import colleges from "../data/collegelist.json";
 
         progBar.style.width =
             Math.max(
-                Math.min(
-                    parseInt(progBar.style.width) -
-                        100 / (moverElem.children.length - 1),
-                    100
-                ),
+                parseInt(progBar.style.width) -
+                    100 / (moverElem.children.length - 1),
                 0
             ) + "%";
 
