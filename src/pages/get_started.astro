@@ -98,11 +98,11 @@ import colleges from "../data/collegelist.json";
             parseInt(moverElem.style.left ? moverElem.style.left : "0") -
             100 +
             "%";
-        progBar.style.width =
-            progBar.offsetWidth +
-            progCon.offsetWidth / moverElem.children.length +
-            "px";
+        let incAmt =
+            parseInt(progBar.style.width) + 100 / moverElem.children.length;
+        progBar.style.width = (incAmt > 100 ? 100 : incAmt) + "%";
     });
+
     nextButton?.addEventListener("mouseup", (event) => {
         event.preventDefault();
         if (!nextButton) return;
@@ -117,10 +117,9 @@ import colleges from "../data/collegelist.json";
             parseInt(moverElem.style.left ? moverElem.style.left : "0") +
             100 +
             "%";
-        progBar.style.width =
-            progBar.offsetWidth -
-            progCon.offsetWidth / moverElem.children.length +
-            "px";
+        let decAmt =
+            parseInt(progBar.style.width) - 100 / moverElem.children.length;
+        progBar.style.width = (decAmt < 0 ? 0 : decAmt) + "%";
     });
 
     spwnedBtns.forEach((btn) => {
