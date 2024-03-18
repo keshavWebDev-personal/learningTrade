@@ -94,13 +94,18 @@ import colleges from "../data/collegelist.json";
         event.preventDefault();
         if (!nextButton || !moverElem || !progBar || !progCon) return;
         if (progBar.offsetWidth == progCon.offsetWidth) return;
+
         moverElem.style.left =
-            parseInt(moverElem.style.left ? moverElem.style.left : "0") -
-            100 +
-            "%";
-        let incAmt =
-            parseInt(progBar.style.width) + 100 / moverElem.children.length;
-        progBar.style.width = (incAmt > 100 ? 100 : incAmt) + "%";
+            Math.max(
+                parseInt(moverElem.style.left ? moverElem.style.left : "0") -
+                    100,
+                moverElem.children.length * -100
+            ) + "%";
+        progBar.style.width =
+            Math.min(
+                parseInt(progBar.style.width) + 100 / moverElem.children.length,
+                100
+            ) + "%";
     });
 
     nextButton?.addEventListener("mouseup", (event) => {
@@ -114,12 +119,12 @@ import colleges from "../data/collegelist.json";
         if (!moverElem || !progBar || !progCon) return;
         if (progBar.offsetWidth == 0) return;
         moverElem.style.left =
-            parseInt(moverElem.style.left ? moverElem.style.left : "0") +
-            100 +
-            "%";
-        let decAmt =
-            parseInt(progBar.style.width) - 100 / moverElem.children.length;
-        progBar.style.width = (decAmt < 0 ? 0 : decAmt) + "%";
+            Math.min(parseInt(moverElem.style.left) + 100, 0) + "%";
+        progBar.style.width =
+            Math.min(
+                parseInt(progBar.style.width) - 100 / moverElem.children.length,
+                100
+            ) + "%";
     });
 
     spwnedBtns.forEach((btn) => {
