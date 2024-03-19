@@ -40,9 +40,15 @@ import colleges from "../data/collegelist.json";
                         id="progress-completed"
                         style="width:0px"></span>
                 </div>
+                <button
+                    id="next_button_btn"
+                    aria-label="nextButton"
+                    class="btn btn-success btn-disabled">Next</button
+                >
 
                 <svg
-                    id="next_button"
+                    id="next_button_svg"
+                    aria-label="nextButton"
                     class="w-5 dark:fill-white fill-black rotate-180 active:scale-90 transition-all duration-150 opacity-25"
                     width="1.25rem"
                     height="1.25rem"
@@ -59,6 +65,7 @@ import colleges from "../data/collegelist.json";
                 >
             </div>
         </div>
+
         <div class="h-full max-h-max overflow-x-hidden relative">
             <!-- Mover Element -->
             <div
@@ -81,7 +88,13 @@ import colleges from "../data/collegelist.json";
     );
     let moverElem: HTMLDivElement | null =
         document.querySelector("#mover-element");
-    let nextButton: SVGElement | null = document.querySelector("#next_button");
+    let nextButtonSvg: SVGElement | null =
+        document.querySelector("#next_button_svg");
+    let nextBtns: NodeListOf<HTMLElement> = document.querySelectorAll(
+        '[aria-label="nextButton"]'
+    );
+    let nextButton: SVGElement | null =
+        document.querySelector("#next_button_btn");
 
     let backButton: SVGElement | null = document.querySelector("#back_button");
 
@@ -90,36 +103,41 @@ import colleges from "../data/collegelist.json";
     }
     let spwnedBtns: NodeListOf<HTMLButtonElement> | null =
         document.querySelectorAll('[aria-label="trig_button"]');
-    nextButton?.addEventListener("mousedown", (event) => {
-        event.preventDefault();
-        if (!nextButton || !moverElem || !progBar || !progCon || !backButton)
-            return;
-        if (progBar.offsetWidth == progCon.offsetWidth) return;
 
-        moverElem.style.left =
-            Math.max(
-                parseInt(moverElem.style.left ? moverElem.style.left : "0") -
-                    100,
-                (moverElem.children.length - 1) * -100
-            ) + "%";
+    nextBtns.forEach((item) => {
+        item.addEventListener("mousedown", (event) => {
+            event.preventDefault();
+            if (!nextButtonSvg ||!moverElem ||!progBar ||!progCon ||!backButton)return;
+            if (progBar.offsetWidth == progCon.offsetWidth) return;
 
-        progBar.style.width =
-            Math.min(
-                Math.ceil(
-                    parseInt(progBar.style.width) +
-                        100 / (moverElem.children.length - 1)
-                ),
-                100
-            ) + "%";
-        if (!(progBar.style.width == "0%") || !progBar.style.width) {
-            backButton.style.opacity = "1";
-        }
-    });
+            moverElem.style.left =
+                Math.max(
+                    parseInt(
+                        moverElem.style.left ? moverElem.style.left : "0"
+                    ) - 100,
+                    (moverElem.children.length - 1) * -100
+                ) + "%";
 
-    nextButton?.addEventListener("mouseup", (event) => {
-        event.preventDefault();
-        if (!nextButton) return;
-        nextButton.style.opacity = "0.4";
+            progBar.style.width =
+                Math.min(
+                    Math.ceil(
+                        parseInt(progBar.style.width) +
+                            100 / (moverElem.children.length - 1)
+                    ),
+                    100
+                ) + "%";
+            if (!(progBar.style.width == "0%") || !progBar.style.width) {
+                backButton.style.opacity = "1";
+                nextButton?.classList.remove("btn-disabled");
+            }
+        });
+
+        item.addEventListener("mouseup", (event) => {
+            event.preventDefault();
+            if (!nextButtonSvg) return;
+            nextButtonSvg.style.opacity = "0.4";
+            nextButton?.classList.add("btn-disabled");
+        });
     });
 
     backButton?.addEventListener("mousedown", (event) => {
@@ -152,8 +170,9 @@ import colleges from "../data/collegelist.json";
 
     spwnedBtns.forEach((btn) => {
         btn.addEventListener("mousedown", () => {
-            if (!nextButton) return;
-            nextButton.style.opacity = "1";
+            if (!nextButtonSvg) return;
+            nextButtonSvg.style.opacity = "1";
+            nextButton?.classList.remove("btn-disabled");
         });
     });
 </script>
