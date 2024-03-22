@@ -3,6 +3,7 @@ import Main from "../layouts/main.astro";
 // import CollegeSelect from '../components/get_started/college_selection/collegeSelect.svelte'
 import CollegeSelect from "../components/get_started/1_college_selection/collegeSelect.astro";
 import CourseSelect from "../components/get_started/2_course_selection/courseSelect.astro";
+import FinishPage from "../components/get_started/z_finish_page/finishPage.astro";
 import colleges from "../data/collegelist.json";
 ---
 
@@ -74,6 +75,7 @@ import colleges from "../data/collegelist.json";
             >
                 <CollegeSelect colleges={colleges} />
                 <CourseSelect />
+                <FinishPage/>
             </div>
         </div>
     </div>
