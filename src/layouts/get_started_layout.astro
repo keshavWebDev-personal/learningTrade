@@ -1,0 +1,90 @@
+---
+import Main from "./main.astro";
+---
+
+<Main title="Get Started">
+    <div
+        class="dark:text-white dark:bg-[#181818] flex flex-col min-h-screen h-screen max-h-max"
+    >
+        <slot />
+    </div>
+</Main>
+
+<script>
+    let progBar: HTMLSpanElement | null = document.querySelector(
+        "#progress-completed"
+    );
+    let progCon: HTMLDivElement | null = document.querySelector(
+        "#progress-container"
+    );
+    let moverElem: HTMLDivElement | null =
+        document.querySelector("#mover-element");
+    let nextButtonSvg: SVGElement | null =
+        document.querySelector("#next_button_svg");
+    let nextBtns: NodeListOf<HTMLElement> = document.querySelectorAll(
+        '[aria-label="nextButton"]'
+    );
+    let nextButton: SVGElement | null =
+        document.querySelector("#next_button_btn");
+
+    let backButton: SVGElement | null = document.querySelector("#back_button");
+
+    if (moverElem && progCon && progBar) {
+        moverElem.style.width = moverElem.children.length * 100 + "%";
+    }
+    let spwnedBtns: NodeListOf<HTMLButtonElement> | null =
+        document.querySelectorAll('[aria-label="trig_button"]');
+
+    nextBtns.forEach((item) => {
+        item.addEventListener("mousedown", (event) => {
+            event.preventDefault();
+            if (
+                !nextButtonSvg ||
+                !moverElem ||
+                !progBar ||
+                !progCon ||
+                !backButton
+            )
+                return;
+
+            if (!(progBar.style.width == "0%") || !progBar.style.width) {
+                backButton.style.opacity = "1";
+                nextButton?.classList.remove("btn-disabled");
+            }
+        });
+
+        item.addEventListener("mouseup", (event) => {
+            event.preventDefault();
+            if (!nextButtonSvg) return;
+            nextButtonSvg.style.opacity = "0.4";
+            nextButton?.classList.add("btn-disabled");
+        });
+    });
+
+    backButton?.addEventListener("mousedown", (event) => {
+        event.preventDefault();
+        if (!moverElem || !progBar || !progCon || !backButton) return;
+        if (progBar.offsetWidth == 0) return;
+
+        if (progBar.style.width == "0%") {
+            backButton.style.opacity = "0.4";
+        } else {
+            backButton.classList.add("active:scale-90");
+        }
+    });
+    backButton?.addEventListener("mouseup", (event) => {
+        event.preventDefault();
+        if (!progBar || !backButton) return;
+        if (progBar.style.width == "0%") {
+            backButton.classList.remove("active:scale-90");
+        }
+    });
+
+    spwnedBtns.forEach((btn) => {
+        btn.addEventListener("mousedown", () => {
+            if (!nextButtonSvg) return;
+            nextButtonSvg.style.opacity = "1";
+            nextButton?.classList.remove("btn-disabled");
+        });
+    });
+</script>

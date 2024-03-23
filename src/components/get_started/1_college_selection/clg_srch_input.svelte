@@ -36,7 +36,7 @@
     <div
         class=" rounded-full bg-[#004AAD] lg:w-10 lg:p-2 sm:w-8 sm:p-2 w-6 p-1 text-white fill-white"
     >
-        <img src="svg/search-icon.svg" alt="" srcset="" />
+        <img src="/svg/search-icon.svg" alt="" srcset="" />
     </div>
     <input
         type="text"

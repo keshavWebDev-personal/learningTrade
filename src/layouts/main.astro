@@ -1,4 +1,6 @@
 ---
+import ViewTransitions from "astro/components/ViewTransitions.astro";
+
 
 ---
 
@@ -9,6 +11,7 @@
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>{Astro.props.title}</title>
+        <ViewTransitions />
     </head>
     <body>
         <slot>Default Text</slot>
