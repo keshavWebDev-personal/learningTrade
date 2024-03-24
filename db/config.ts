@@ -40,15 +40,24 @@ const collegeList = defineTable({
     id: column.number({ primaryKey: true, autoIncrement: true }),
     name: column.text(),
     alias: column.text(),
-    add_local: column.text({references: ()=>address_local.columns.name}),
-    add_city: column.text({references: ()=>address_city.columns.name}),
-    add_district: column.text({references: ()=>address_district.columns.name}),
-    add_state: column.text({references: ()=>address_state.columns.name}),
-    add_country: column.text({references: ()=>address_country.columns.name})
+    add_local: column.number({references: ()=>address_local.columns.id}),
+    add_city: column.number({references: ()=>address_city.columns.id}),
+    add_district: column.number({references: ()=>address_district.columns.id}),
+    add_state: column.number({references: ()=>address_state.columns.id}),
+    add_country: column.number({references: ()=>address_country.columns.id})
   }
 })
 
-const CollegeDB = defineDb({ tables: { collegeList } });
+const CollegeDB = defineDb({
+    tables: {
+        collegeList,
+        address_local,
+        address_city,
+        address_district,
+        address_state,
+        address_country,
+    },
+});
 
 // https://astro.build/db/config
-export {CollegeDB}
+export default defineDb(CollegeDB)

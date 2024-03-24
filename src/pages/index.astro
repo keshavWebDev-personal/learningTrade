@@ -1,5 +1,38 @@
 ---
 import Main from "../layouts/main.astro";
+import {
+    db,
+    eq,
+    collegeList,
+    address_local,
+    address_city,
+    address_district,
+    address_state,
+    address_country,
+} from "astro:db";
+
+const colleges = await db
+    .select()
+    .from(collegeList)
+    .innerJoin(address_local, eq(collegeList.add_local, address_local.id))
+    .innerJoin(address_city, eq(collegeList.add_city, address_city.id))
+    .innerJoin(address_district, eq(collegeList.add_district, address_district.id))
+    .innerJoin(address_state, eq(collegeList.add_state, address_state.id))
+    .innerJoin(address_country, eq(collegeList.add_country, address_country.id));
+    
 ---
 
-<Main title="Home" />
+<Main title="Home">
+    {
+        colleges.map((college) => (
+            <>
+                <h1>{college.collegeList.name}</h1>
+                <h1>{college.collegeList.alias}</h1>
+                <h1>{college.address_local.name}</h1>
+                <h1>{college.address_city.name}</h1>
+                <h1>{college.address_district.name}</h1>
+                <h1>{college.address_state.name}</h1>
+            </>
+        ))
+    }
+</Main>
