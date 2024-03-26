@@ -22,7 +22,20 @@ const colleges = await db
     .innerJoin(address_country, eq(collegeList.add_country, address_country.id));
 
 
-let Mcolleges = colleges.map((college, index) => {
+
+type CollegeData = {
+    [Key in keyof typeof colleges[number]]: typeof colleges[number][Key];
+};
+
+type College = {
+    uuid: string;
+} & CollegeData;
+
+let Mcolleges: College[] = colleges.map((college) => {
+    const collegeData: CollegeData = Object.fromEntries(
+        Object.entries(college).map(([key, value]) => [key, value])
+    ) as CollegeData;
+
     return {
         uuid: uuidv4(),
         ...college,
@@ -30,7 +43,7 @@ let Mcolleges = colleges.map((college, index) => {
 });
 
 
-
 const collegelist = writable(Mcolleges);
 
 export { collegelist, Mcolleges };
+export type {College}

@@ -1,13 +1,13 @@
 <script lang="ts">
     import { collegelist } from "./store.ts";
-    import type { College } from "../../get_started.interface.ts";
+    import type { College } from "./store.ts";
 
     function cptlFstL(string: string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
     let buttons: College[] = [];
-
+        
     collegelist.subscribe((colleges) => {
         buttons = colleges.map((item) => {
             return item;
@@ -23,17 +23,17 @@
             aria-label="trig_button"
         >
             <span class="">
-                <p>{item.name}</p>
+                <p>{item.collegeList.name}</p>
 
                 <p
                     class="font-[SourceCodePro] xl:text-base lg:text-sm md:text-xs sm:text-[0.7rem] text-[0.5rem] dark:text-neutral-300"
                 
                 >
-                    {cptlFstL(item.address.local)},
-                    {cptlFstL(item.address.city)},
-                    {cptlFstL(item.address.district)},
-                    {cptlFstL(item.address.state)},
-                    {cptlFstL(item.address.country)}
+                    {cptlFstL(item.address_local.name)},
+                    {cptlFstL(item.address_city.name)},
+                    {cptlFstL(item.address_district.name)},
+                    {cptlFstL(item.address_state.name)},
+                    {cptlFstL(item.address_country.name)}
                 </p>
             </span>
 
@@ -41,7 +41,7 @@
                 class="font-[BebasNeue] xl:text-2xl text-lg"
             
             >
-                {item.alias}
+                {item.collegeList.alias}
             </p>
         </button>
     {/each}
