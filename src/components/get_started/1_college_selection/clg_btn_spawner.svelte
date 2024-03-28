@@ -1,7 +1,5 @@
 <script lang="ts">
-    import { collegelist } from "./store.ts";
-    import type { College } from "./store.ts";
-
+    
     function cptlFstL(string: string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }

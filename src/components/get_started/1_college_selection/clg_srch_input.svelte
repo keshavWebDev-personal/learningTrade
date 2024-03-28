@@ -1,6 +1,9 @@
 <script lang="ts">
-    import { collegelist, Mcolleges as collegelistOg } from "./store.ts";
+    import type { Stores } from "svelte/store";
     import type { College } from "../../get_started.interface.ts";
+
+    export let collegelist: Stores
+    export let collegelistOg: College[]
 
     let srch_value: string = "";
     let filtered: College[] = [];
