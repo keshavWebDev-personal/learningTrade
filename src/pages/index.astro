@@ -3,17 +3,96 @@
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-		<div class="glass">
-			hello
-		</div>
-	</body>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+		<style>
+			#container::before{
+				filter: url(#grainy);
+			}
+		</style>
+        <title>Astro</title>
+    </head>
+    <body>
+		<svg class="hidden">
+			<filter id="grainy">
+				<feTurbulence type="fractalNoise" baseFrequency="0.6"/>
+				<feComposite operator="in" in2="SourceGraphic" result="monoNoise"/>
+			</filter>
+		</svg>
+        <div id="container" class="bg-[#121212] w-screen h-screen z-0 before:content-[''] before:absolute before:left-0 before:top-0 before:opacity-30 before:w-full before:h-full before:bg-black before:z-10">
+            <div
+                class="bg-[#ffffff11] w-full h-full backdrop-blur-lg flex justify-center z-20"
+            >
+                <div class="w-full flex justify-between px-10 h-min items-center mt-4">
+                    <nav
+                        class="mr-7 w-full h-12 border-[1px] border-[#444] rounded-box bg-gradient-to-tr from-[#ffffff00] to-[#ffffff44] flex items-center justify-between px-4"
+                    >
+                        <ul class="menu menu-horizontal">
+                            <li>
+                                <a class="tooltip" data-tip="Home">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        ><path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                                        ></path></svg
+                                    >
+                                </a>
+                            </li>
+                            <li>
+                                <a class="tooltip" data-tip="Details">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        ><path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                        ></path></svg
+                                    >
+                                </a>
+                            </li>
+                            <li>
+                                <a class="tooltip" data-tip="Stats">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="h-5 w-5"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        ><path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                                        ></path></svg
+                                    >
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="avatar">
+                        <div class="w-16 mask mask-squircle">
+                            <img
+                                src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
