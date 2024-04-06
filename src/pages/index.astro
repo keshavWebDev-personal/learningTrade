@@ -1,5 +1,6 @@
 ---
-
+import MyPic from "../assets/images/my_pic.jpg";
+import { Image } from 'astro:assets';
 ---
 
 <html lang="en">
@@ -8,25 +9,35 @@
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-		<style>
-			#container::before{
-				filter: url(#grainy);
-			}
-		</style>
+        <style>
+            #container::before {
+                filter: url(#grainy);
+            }
+        </style>
         <title>Astro</title>
     </head>
-    <body>
-		<svg class="hidden">
-			<filter id="grainy">
-				<feTurbulence type="fractalNoise" baseFrequency="0.6"/>
-				<feComposite operator="in" in2="SourceGraphic" result="monoNoise"/>
-			</filter>
-		</svg>
-        <div id="container" class="bg-[#121212] w-screen h-screen z-0 before:content-[''] before:absolute before:left-0 before:top-0 before:opacity-30 before:w-full before:h-full before:bg-black before:z-10">
+    <body class="overflow-hidden">
+        <svg class="hidden">
+            <filter id="grainy">
+                <feTurbulence type="fractalNoise" baseFrequency="0.6"
+                ></feTurbulence>
+                <feComposite
+                    operator="in"
+                    in2="SourceGraphic"
+                    result="monoNoise"></feComposite>
+            </filter>
+        </svg>
+        
+
+        <div class="bg-[#121212] w-screen h-screen before:content-[''] before:w-[50rem] before:top-[-200px] before:left-[-200px] before:opacity-10 before:aspect-square  before:bg-gradient-to-tr before:from-orange-400 before:to-red-300 before:absolute  before:rounded-full after:content-[''] after:w-[50rem] after:right-[-200px] after:bottom-[-200px] after:opacity-10 after:aspect-square  after:bg-gradient-to-tr after:from-violet-600 after:to-fuchsia-600 after:absolute  after:rounded-full">
             <div
-                class="bg-[#ffffff11] w-full h-full backdrop-blur-lg flex justify-center z-20"
+                id="container"
+                class="bg-[#ffffff11] w-full h-full backdrop-blur-3xl flex justify-center z-20 relative before:content-[''] before:absolute before:left-0 before:top-0 before:opacity-30 before:w-full before:h-full before:bg-black"
             >
-                <div class="w-full flex justify-between px-10 h-min items-center mt-4">
+                <!-- Top Bar -->
+                <div
+                    class="w-full flex justify-between px-10 h-min items-center mt-4 z-10"
+                >
                     <nav
                         class="mr-7 w-full h-12 border-[1px] border-[#444] rounded-box bg-gradient-to-tr from-[#ffffff00] to-[#ffffff44] flex items-center justify-between px-4"
                     >
@@ -84,14 +95,14 @@
                             </li>
                         </ul>
                     </nav>
-                    <div class="avatar">
-                        <div class="w-16 mask mask-squircle">
-                            <img
-                                src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-                            />
+                    <div class="avatar online">
+                        <div class="w-16 mask mask-squircle ">
+                            <Image src={MyPic} alt={"Icon"}/>
                         </div>
                     </div>
                 </div>
+
+
             </div>
         </div>
     </body>
