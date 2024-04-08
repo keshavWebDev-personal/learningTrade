@@ -1,6 +1,6 @@
 ---
 import MyPic from "../assets/images/my_pic.jpg";
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 ---
 
 <html lang="en">
@@ -16,7 +16,7 @@ import { Image } from 'astro:assets';
         </style>
         <title>Astro</title>
     </head>
-    <body class="overflow-hidden">
+    <body class="overflow-x-hidden">
         <svg class="hidden">
             <filter id="grainy">
                 <feTurbulence type="fractalNoise" baseFrequency="0.6"
@@ -27,9 +27,9 @@ import { Image } from 'astro:assets';
                     result="monoNoise"></feComposite>
             </filter>
         </svg>
-        
-
-        <div class="bg-[#121212] w-screen h-screen before:content-[''] before:w-[50rem] before:top-[-200px] before:left-[-200px] before:opacity-10 before:aspect-square  before:bg-gradient-to-tr before:from-orange-400 before:to-red-300 before:absolute  before:rounded-full after:content-[''] after:w-[50rem] after:right-[-200px] after:bottom-[-200px] after:opacity-10 after:aspect-square  after:bg-gradient-to-tr after:from-violet-600 after:to-fuchsia-600 after:absolute  after:rounded-full">
+        <div
+            class="bg-[#121212] w-screen h-screen before:content-[''] before:w-[50rem] before:top-[-200px] before:left-[-200px] before:opacity-10 before:aspect-square before:bg-gradient-to-tr before:from-orange-400 before:to-red-300 before:absolute before:rounded-full after:content-[''] after:w-[50rem] after:right-[-200px] after:bottom-[-200px] after:opacity-10 after:aspect-square after:bg-gradient-to-tr after:from-violet-600 after:to-fuchsia-600 after:absolute after:rounded-full"
+        >
             <div
                 id="container"
                 class="bg-[#ffffff11] w-full h-full backdrop-blur-3xl flex justify-center z-20 relative before:content-[''] before:absolute before:left-0 before:top-0 before:opacity-30 before:w-full before:h-full before:bg-black"
@@ -96,13 +96,13 @@ import { Image } from 'astro:assets';
                         </ul>
                     </nav>
                     <div class="avatar online">
-                        <div class="w-16 mask mask-squircle ">
-                            <Image src={MyPic} alt={"Icon"}/>
+                        <div class="w-16 mask mask-squircle">
+                            <Image src={MyPic} alt={"Icon"} />
                         </div>
                     </div>
                 </div>
 
-
+                <!-- Content -->
             </div>
         </div>
     </body>
