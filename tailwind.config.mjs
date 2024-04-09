@@ -4,30 +4,12 @@ export default {
     theme: {
         extend: {},
     },
-    daisyui: {
-        themes: [
-            {
-                mytheme: {
-                    primary: "#ce00ea",
-
-                    secondary: "#7e6600",
-
-                    accent: "#007500",
-
-                    neutral: "#141414",
-
-                    "base-100": "#1f253a",
-
-                    info: "#007ff4",
-
-                    success: "#65a300",
-
-                    warning: "#bc8700",
-
-                    error: "#ff8a95",
-                },
-            },
-        ],
+    colors: {
+        text: "#f8f2e2",
+        background: "#191919",
+        primary: "#ECDBBA",
+        secondary: "#2D4263",
+        accent: "#C84B31",
     },
     plugins: [require("daisyui")],
 };

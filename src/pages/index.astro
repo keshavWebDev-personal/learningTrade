@@ -1,6 +1,22 @@
 ---
 import MyPic from "../assets/images/my_pic.jpg";
 import { Image } from "astro:assets";
+
+const data = {
+    PYQ: [
+        {
+            name: "DBMS",
+            year: "2024",
+            link: "src/assets/pdfs/DBMS-2022-4 (2).pdf"
+        },
+        {
+            name:"IS",
+            year: "2022",
+            link: "src/assets/pdfs/IS-2022-2 (1).pdf"
+        }
+    ]
+}
+
 ---
 
 <html lang="en">
@@ -32,10 +48,10 @@ import { Image } from "astro:assets";
         >
             <div
                 id="container"
-                class="bg-[#ffffff11] w-full h-full backdrop-blur-3xl flex justify-center z-20 relative before:content-[''] before:absolute before:left-0 before:top-0 before:opacity-30 before:w-full before:h-full before:bg-black"
+                class="bg-[#ffffff11] w-full h-full backdrop-blur-3xl flex justify-center z-20 relative before:content-[''] before:absolute before:left-0 before:top-0 before:opacity-30 before:w-full before:h-full before:bg-black flex-col"
             >
                 <!-- Top Bar -->
-                <div
+                <header
                     class="w-full flex justify-between px-10 h-min items-center mt-4 z-10"
                 >
                     <nav
@@ -100,9 +116,23 @@ import { Image } from "astro:assets";
                             <Image src={MyPic} alt={"Icon"} />
                         </div>
                     </div>
-                </div>
+                </header>
 
                 <!-- Content -->
+                <main
+                    class="w-full h-full flex "
+                    >
+                    <div class="flex  z-50">
+                        {
+                            data.PYQ.map(element => {
+                                return <embed class=" w-3  ">
+                                    <embed src={element.link} type="application/pdf" width="1000px">
+                                    <p> {element.name}</p>
+                                </div>
+                            })
+                        }
+                    </div>
+                </main>
             </div>
         </div>
     </body>
