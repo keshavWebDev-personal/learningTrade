@@ -1,6 +1,7 @@
 ---
 import MyPic from "../assets/images/my_pic.jpg";
 import { Image } from "astro:assets";
+import Layout from "../layout/main.astro";
 
 const data = {
     PYQ: [
@@ -19,20 +20,13 @@ const data = {
 
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <style>
-            #container::before {
+<Layout title="Home">
+    <style>
+        #container::before {
                 filter: url(#grainy);
             }
-        </style>
-        <title>Astro</title>
-    </head>
-    <body class="overflow-x-hidden">
+    </style>
+    <div class="overflow-x-hidden w-screen">
         <svg class="hidden">
             <filter id="grainy">
                 <feTurbulence type="fractalNoise" baseFrequency="0.6"
@@ -134,6 +128,6 @@ const data = {
                     </div>
                 </main>
             </div>
-        </div>
-    </body>
-</html>
+        </di>
+    </div>
+</Layout>
