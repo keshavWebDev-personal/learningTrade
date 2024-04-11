@@ -2,6 +2,28 @@
 import MyPic from "../assets/images/my_pic.jpg";
 import { Image } from "astro:assets";
 import Layout from "../layout/main.astro";
+import { initializeApp } from "firebase/app";
+import { getDownloadURL, getStorage, ref } from "firebase/storage";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCBEMNDreKhZaViwfwSUXvP8bnLCYsJOW0",
+  authDomain: "learningtrade-d5b63.firebaseapp.com",
+  databaseURL: "https://learningtrade-d5b63-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "learningtrade-d5b63",
+  storageBucket: "learningtrade-d5b63.appspot.com",
+  messagingSenderId: "791609082751",
+  appId: "1:791609082751:web:16721f348732e463ab904a",
+  
+};
+
+const app = initializeApp(firebaseConfig);
+const storage = getStorage(app);
+const asset = ref(storage, 'gs://learningtrade-d5b63.appspot.com/assets/PYQ/DBMS-2022-4 (2).pdf');
+
+getDownloadURL(asset).then((url) => {
+    console.log(url);
+});
+
 
 const data = {
     PYQ: [
